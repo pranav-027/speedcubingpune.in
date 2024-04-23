@@ -9,10 +9,12 @@ html {
 p {
     font-family: 'Oxygen', sans-serif;
 }
+
 a{
-     color: green;
+    color: green;
     text-decoration: none;
 }
+
 .subtitle{
     font-size: 14px;
     color: #b3b3b3;
