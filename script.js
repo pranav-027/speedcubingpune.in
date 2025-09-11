@@ -1,22 +1,30 @@
-let slides = document.querySelectorAll('.slide');
-let index = 0;
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
+const slidesContainer = document.querySelector(".slides");
 
-document.querySelector('.next').addEventListener('click', () => {
-  index = (index + 1) % slides.length;
-  updateSlide();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  index = (index - 1 + slides.length) % slides.length;
-  updateSlide();
-});
-
-function updateSlide() {
-  document.querySelector('.slides').style.transform = `translateX(-${index * 100}%)`;
+function showSlide(index) {
+  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
 }
 
-// Auto slide
+// Auto-slide every 6s (instead of ~3s)
 setInterval(() => {
-  index = (index + 1) % slides.length;
-  updateSlide();
-}, 5000);
+  slideIndex = (slideIndex + 1) % totalSlides;
+  showSlide(slideIndex);
+}, 6000);
+
+// Manual controls
+document.querySelector(".prev").addEventListener("click", () => {
+  slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+  showSlide(slideIndex);
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  slideIndex = (slideIndex + 1) % totalSlides;
+  showSlide(slideIndex);
+});
+
+showSlide(slideIndex);
