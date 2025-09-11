@@ -1,78 +1,22 @@
-const stackContainer = document.querySelector('.stack-container');
-const cardNodes = document.querySelectorAll('.card-container');
-const consoleNodes = document.querySelectorAll('.writing');
-const perspecNodes = document.querySelectorAll('.perspec');
-const perspec = document.querySelector('.perspec');
-const card = document.querySelector('.card');
+let slides = document.querySelectorAll('.slide');
+let index = 0;
 
-let counter = stackContainer.children.length;
+document.querySelector('.next').addEventListener('click', () => {
+  index = (index + 1) % slides.length;
+  updateSlide();
+});
 
-//function to generate random number
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+document.querySelector('.prev').addEventListener('click', () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlide();
+});
+
+function updateSlide() {
+  document.querySelector('.slides').style.transform = `translateX(-${index * 100}%)`;
 }
 
-//after tilt animation, fire the explode animation
-card.addEventListener('animationend', function () {
-    perspecNodes.forEach(function (elem, index) {
-        elem.classList.add('explode');
-    });
-});
-
-//after explode animation do a bunch of stuff
-perspec.addEventListener('animationend', function (e) {
-    if (e.animationName === 'explode') {
-        cardNodes.forEach(function (elem, index) {
-
-            //add hover animation class
-            elem.classList.add('pokeup');
-
-            //add event listner to throw card on click
-            elem.addEventListener('click', function () {
-                let updown = [800, -800]
-                let randomY = updown[Math.floor(Math.random() * updown.length)];
-                let randomX = Math.floor(Math.random() * 1000) - 1000;
-                elem.style.transform = `translate(${randomX}px, ${randomY}px) rotate(-540deg)`
-                elem.style.transition = "transform 1s ease, opacity 2s";
-                elem.style.opacity = "0";
-                counter--;
-                if (counter === 0) {
-                    stackContainer.style.width = "0";
-                    stackContainer.style.height = "0";
-                }
-            });
-
-            //generate random number of lines of code between 4 and 10 and add to each card
-            let numLines = randomIntFromInterval(5, 10);
-
-            //loop through the lines and add them to the DOM
-            for (let index = 0; index < numLines; index++) {
-                let lineLength = randomIntFromInterval(25, 97);
-                var node = document.createElement("li");
-                node.classList.add('node-' + index);
-
-                elem.querySelector('.code ul').appendChild(node).setAttribute('style', '--linelength: ' + lineLength + '%;');
-
-                //draw lines of code 1 by 1
-                if (index == 0) {
-                    elem.querySelector('.code ul .node-' + index).classList.add('writeLine');
-                } else {
-                    elem.querySelector('.code ul .node-' + (index - 1)).addEventListener('animationend', function (e) {
-                        if(index == numLines-1){
-                            node.classList.add('errorLine');
-                            elem.querySelector('.code ul .node-' + index).classList.add('writeLine');
-                            setTimeout(function() {
-                                consoleNodes.forEach(function (elem, index) {
-                                    elem.classList.add('writing-error');
-                                });
-                            }, 2000);
-                        }else{
-                            elem.querySelector('.code ul .node-' + index).classList.add('writeLine');
-                        }
-                    });
-                }
-            }
-        });
-    }
-
-});
+// Auto slide
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  updateSlide();
+}, 5000);

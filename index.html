@@ -1,150 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <link rel="stylesheet" type="text/css" href="./oxygen.fonts.css">
-    <title>Under Maintenance</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speedcubing Pune</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="error">
-            <h1>503</h1>
-            <h2>error</h2>
-            <p>Speedcubing Pune is under maintenance</p>
-            <p class="subtitle">ERR_SERVICE_UNAVAILABLE</p>
-        </div>
-        <div class="stack-container">
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 125px; --scaledist: .75; --vertdist: -25px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 100px; --scaledist: .8; --vertdist: -20px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist:75px; --scaledist: .85; --vertdist: -15px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 50px; --scaledist: .9; --vertdist: -10px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 25px; --scaledist: .95; --vertdist: -5px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="perspec" style="--spreaddist: 0px; --scaledist: 1; --vertdist: 0px;">
-                    <div class="card">
-                        <div class="writing">
-                            <div class="topbar">
-                                <div class="red"></div>
-                                <div class="yellow"></div>
-                                <div class="green"></div>
-                            </div>
-                            <div class="code">
-                                <ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <footer>
-        <p class="copyright">Contact: <a href="mailto:speedcubingpune@gmail.com"> Speedcubing Pune</a></p>
-    </footer>
-    </div>
-    <style>
-        footer {
-            position: fixed;
-            bottom:0;
-            height: 40px;
-            border-top-color:#33333342;
-            border-top-style:solid;
-            border-top-width:1px;
-            width: 100%;
-        }
 
-        p.copyright {
-            position:absolute;
-            margin:0;
-            top: 9px;
-            width: 100%;
-            color: #000000a3;
-            font-size: 1em;
-            text-align: center;
-            bottom:0;
-        }
-    </style>
-	<script type="text/javascript" src="script.js"></script>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./assets/SpeedcubingPune_DarkTheme.png" alt="Speedcubing Pune Logo">
+        <h1>Speedcubing Pune</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#competitions">Competitions</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Slider -->
+  <section id="home" class="slider">
+    <div class="slides">
+      <div class="slide active" style="background-image:url('assets/slide1.jpg')">
+        <div class="overlay">
+          <h2>Welcome to Speedcubing Pune</h2>
+          <p>Join the fastest growing cubing community in India!</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('assets/slide2.jpg')">
+        <div class="overlay">
+          <h2>Competitions</h2>
+          <p>Experience thrilling cubing competitions and events.</p>
+        </div>
+      </div>
+      <div class="slide" style="background-image:url('assets/slide3.jpg')">
+        <div class="overlay">
+          <h2>Community</h2>
+          <p>Connect, Learn, and Compete with cubers across Pune.</p>
+        </div>
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </section>
+
+  <!-- Competitions Section -->
+  <section id="competitions" class="competitions">
+    <h2>Upcoming Competitions</h2>
+    <div class="competition-list">
+      <div class="comp-card">
+        <h3>Pune Cube Open 2025</h3>
+        <p>October 12, 2025</p>
+        <p>Pune, Maharashtra</p>
+      </div>
+      <div class="comp-card">
+        <h3>Maharashtra State Championship</h3>
+        <p>December 5, 2025</p>
+        <p>Pune, Maharashtra</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Competition Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="assets/gallery1.jpg" alt="Comp 1">
+        <div class="card-content">
+          <h3>Pune Cube Open</h3>
+          <a href="https://example.com" target="_blank">View Details</a>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/gallery2.jpg" alt="Comp 2">
+        <div class="card-content">
+          <h3>Maharashtra Champs</h3>
+          <a href="https://example.com" target="_blank">View Details</a>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/gallery3.jpg" alt="Comp 3">
+        <div class="card-content">
+          <h3>Pune Cubing Fest</h3>
+          <a href="https://example.com" target="_blank">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      Speedcubing Pune is a community of Rubik’s Cube enthusiasts from Pune, India.  
+      We organize official and unofficial competitions, workshops, and meetups to  
+      promote cubing culture in the city.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Speedcubing Pune | Made with ❤️ in Pune</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
